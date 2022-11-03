@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class Solution
+{
+    public:
+    int ans;
+    //vector<int>vec;
+   int countLetters(string S)
+   {
+      int i=0,j=0,ans=0,len=S.length();
+      while(i<len)
+      {
+          while(j<len && S[i]==S[j]) j++;
+          int n=j-i;
+          ans+=(n*(n+1)/2);
+          i=j;
+      }
+      return ans;
+   }
+        
+};
+int main()
+{
+    Solution obj;
+    string s="abaabbb";
+    int result=obj.countLetters(s);
+    cout<<result<<endl;
+    
+}
